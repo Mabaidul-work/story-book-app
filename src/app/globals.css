@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #f6f6f6;
   --foreground: #171717;
   --font-family: "Noto Sans", sans-serif;
 }
@@ -43,3 +43,26 @@ body {
 /* .sb-show-main.sb-main-centered #storybook-root {
   width: 100% !important;
 } */
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #e6fffa;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #14b8a6;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #0d9488;
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #14b8a6 #e6fffa;
+}

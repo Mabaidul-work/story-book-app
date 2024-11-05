@@ -25,6 +25,9 @@ const buttonStyles = cva(
         primary: "text-white",
         secondary: "text-black",
       },
+      disabled: {
+        true: "opacity-50 cursor-not-allowed",
+      },
     },
     compoundVariants: [
       {
@@ -64,17 +67,21 @@ const buttonStyles = cva(
       variant: "solid",
       size: "md",
       textColor: "primary",
+      disabled: false,
     },
   }
 );
 
 type ButtonProps = ComponentProps<"button"> & VariantProps<typeof buttonStyles>;
+
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant, size, textColor, className, ...props }, ref) => {
+  ({ disabled, variant, size, textColor, className, ...props }, ref) => {
     return (
       <button
         ref={ref}
-        className={cn(buttonStyles({ variant, size, textColor, className }))}
+        className={cn(
+          buttonStyles({ variant, size, textColor, className, disabled })
+        )}
         {...props}
       />
     );
